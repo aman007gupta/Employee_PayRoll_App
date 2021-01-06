@@ -158,7 +158,7 @@ td img {
     padding: 1px 7px;
     text-align: center;
     font-size: 14px;
-    display: inline-block;
+    display: inline-flex;
     font-weight: 300;
     margin-bottom: 8px;
 }
