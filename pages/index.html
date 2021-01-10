@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <script defer src="../js/EmployeePayroll.js"></script>
     <title>Employee payroll form</title>
 </head>
+
 <body>
     <header class="header-content header">
         <div class="logo-content">
@@ -20,35 +22,30 @@
         </div>
     </header>
     <div class="form-content">
-        <form class="form" action="#" onsubmit="save()" onreset="resetForm()">
+        <form class="form" action="#" onsubmit="save(event)" onreset="resetForm()">
             <div class="form-head">Employee Payroll form</div>
             <div class="row-content">
                 <label for="name" class="label text">Name</label>
-                <input type="text" class="input" id="name" name="name"
-                            placeholder="Your name.." required>
-                <error-output class="text-error" for="text"></error-output> 
+                <input type="text" class="input" id="name" name="name" placeholder="Your name.." required>
+                <error-output class="text-error" for="text"></error-output>
             </div>
             <div class="row-content">
                 <label for="profile" class="label text">Profile image</label>
                 <div class="profile-radio-contenet">
                     <label>
-                        <input type="radio" id="profile1" name="profile"
-                                value="../assets/Ellipse -3.png" required>
+                        <input type="radio" id="profile1" name="profile" value="../assets/Ellipse -3.png" required>
                         <img class="profile" id="image2" src="..//assets/Ellipse -3.png" alt="profile1">
                     </label>
                     <label>
-                        <input type="radio" id="profile2" name="profile"
-                                value="../assets/Ellipse 1.png" required>
+                        <input type="radio" id="profile2" name="profile" value="../assets/Ellipse 1.png" required>
                         <img class="profile" id="image2" src="..//assets/Ellipse 1.png" alt="profile2">
                     </label>
                     <label>
-                        <input type="radio" id="profile3" name="profile"
-                                value="../assets/Ellipse -8.png" required>
+                        <input type="radio" id="profile3" name="profile" value="../assets/Ellipse -8.png" required>
                         <img class="profile" id="image2" src="..//assets/Ellipse -8.png" alt="profile3">
                     </label>
                     <label>
-                        <input type="radio" id="profile4" name="profile"
-                                value="../assets/Ellipse -7.png" required>
+                        <input type="radio" id="profile4" name="profile" value="../assets/Ellipse -7.png" required>
                         <img class="profile" id="image2" src="..//assets/Ellipse -7.png" alt="profile4">
                     </label>
                 </div>
@@ -59,7 +56,7 @@
                     <input type="radio" id="male" name="gender" value="male">
                     <label for="male" class="text">Male</label>
                     <input type="radio" id="female" name="gender" value="female">
-                    <label for="female" class="text">Female</label> 
+                    <label for="female" class="text">Female</label>
                 </div>
             </div>
             <div class="row-content">
@@ -79,13 +76,13 @@
             </div>
             <div class="row-content">
                 <label for="salary" class="label text">Chosse your salary</label>
-                <input type="range" class="salary" name="slary" id="salary" min="300000"
-                        max="500000" step="100" value="400000">
+                <input type="range" class="salary" name="slary" id="salary" min="300000" max="500000" step="100"
+                    value="400000">
                 <output class="salary-output text" for="salary">400000</output>
             </div>
             <div class="row-content">
                 <label for="startDate" class="label text">Start Date</label>
-                <div>
+                <div id="date">
                     <select name="day" id="day">
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -142,6 +139,7 @@
                         <option value="2016">2016</option>
                     </select>
                 </div>
+                <error-output class="date-error" for="startDate"></error-output>
             </div>
             <div class="row-content">
                 <label for="notes" class="label text">Notes</label>
@@ -157,4 +155,5 @@
         </form>
     </div>
 </body>
+
 </html>
