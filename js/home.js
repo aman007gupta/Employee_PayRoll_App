@@ -27,8 +27,8 @@ const createInnerHtml = () => {
                     <td>${employeePayrollData._salary}</td>
                     <td>${stringifyDate(employeePayrollData._startDate)}</td>
                     <td>
-                        <img src="../assets/delete-black-18dp.svg" alt="delete" id="${employeePayrollData._id}" onclick="remove(this)">
-                        <img src="../assets/create-black-18dp.svg" alt="edit" id="${employeePayrollData._id}" onclick="update(this)">
+                        <img src="../assets/delete-black-18dp.svg" alt="delete" id="${employeePayrollData.id}" onclick="remove(this)">
+                        <img src="../assets/create-black-18dp.svg" alt="edit" id="${employeePayrollData.id}" onclick="update(this)">
                     </td>
                 </tr>`;
     }
@@ -44,11 +44,11 @@ const getDeptHtml = (deptList) => {
 }
 
 const remove = (node) => {
-    let employeePayrollData = employeePayrollList.find(empData => empData._id == node.id);
+    let employeePayrollData = employeePayrollList.find(empData => empData.id == node.id);
     if (!employeePayrollData) return;
     const index = employeePayrollList
-        .map(empData => empData._id)
-        .indexOf(employeePayrollData._id);
+        .map(empData => empData.id)
+        .indexOf(employeePayrollData.id);
     employeePayrollList.splice(index, 1);
     localStorage.setItem("EmployeePayrollList", JSON.stringify(employeePayrollList));
     document.querySelector(".emp-count").textContent = employeePayrollList.length;
@@ -56,7 +56,7 @@ const remove = (node) => {
 }
 
 const update = (node) => {
-    let employeePayrollData = employeePayrollList.find(empData => empData._id == node.id);
+    let employeePayrollData = employeePayrollList.find(empData => empData.id == node.id);
     if (!employeePayrollData) return;
     localStorage.setItem('editEmp', JSON.stringify(employeePayrollData));
     location.replace(site_properties.add_emp_payroll_page);
@@ -73,7 +73,7 @@ const createEmployeePayrollJSON = () => {
             _salary: '600000',
             _startDate: '10 Nov 2020',
             _note: '',
-            _id: new Date().getTime(),
+            id: new Date().getTime(),
             _profilePic: '../assets/Ellipse -2.png'
         },
         {
@@ -86,7 +86,7 @@ const createEmployeePayrollJSON = () => {
             _salary: '500000',
             _startDate: '10 Nov 2020',
             _note: '',
-            _id: new Date().getTime(),
+            id: new Date().getTime(),
             _profilePic: '../assets/Ellipse -1.png'
         }
     ];
