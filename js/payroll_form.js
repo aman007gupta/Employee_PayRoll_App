@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         }
         try {
             // (new EmployeePayrollData()).name = name.value;
-            checkName(new Date(Date.parse(startDate)));
+            checkName(name.value);
             setTextValue('.text-error', "");
         } catch (e) {
             setTextValue('.text-error', e);
